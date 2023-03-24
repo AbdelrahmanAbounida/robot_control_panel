@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Robot Control Panel (Manual Control, Remote Control , Path Planning)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- A simple dashboard that add some features to control a mobile robot using ROS:
+  - Robot connection status.
+  - Moving buttons in various directions.
+  - Force stop button for emergency cases.
+  - Dynamic target depth publisher which allows users to send target depth with a single click.
+  - Tracking the current depth value .
+  - Adjusting the PID parameters dynamically.
+  - Path Planning
+  - Displaying the current overshoot, and some other prop-
+  erties.
+  
+  <p align="center">
+  <img src="path_planning.png" width="700px">
+  </p>
 
-## Available Scripts
+  
+  ## Getting Started
+  
+  ### Installation ###
+   1. Go to your ROS package source directory:
+      - `$ cd ros_workspace_path/src`
+   2. Clone this project.
+      - `$ git clone git@github.com:AbdelrahmanAbounida/robot_control_panel.git`
+   3. Go back to your ROS workspace:
+      - `$ cd ../`
+   4. Build and install it:
+      - `$ catkin build
+   5. Reload your ROS env.
+      - bash: `$ source devel/setup.sh`
+      - zsh: `$ source devel/setup.sh`
 
-In the project directory, you can run:
+## Running ##
 
-### `npm start`
+  <p align="center">
+  <img src="main.png" width="700px">
+  </p>
+  
+ - installation
+    - `roscd web_ui/src/ui`
+    - `npm inistall`
+    
+- edit the websocket ip
+    -  `roscd web_ui/src/ui/src/features/RosConnection `
+    -  `ifconfig` # to get the local ip address of your device
+    -  `cat RosConnectionSlice.js`
+    -  edit  `const rosbridge_address ="your_ip"`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- open websocket connection to the local running roscore
+    - `sudo apt-get install ros-<rosdistro>-rosbridge-server`
+    - `roslaunch rosbridge_server rosbridge_websocket.launch`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- start connecting 
+    - `roscd web_ui/src/ui/`
+    - `npm run start`
+- have fun with the tool
+    <center><p align = "center"> :star::star::star: </p> </center>
